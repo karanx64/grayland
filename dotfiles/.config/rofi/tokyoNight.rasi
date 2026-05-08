@@ -2,6 +2,7 @@
     background: #24283b;
     backgroundOP: #24283b88;
     foreground: #c0caf5;
+    foregroundOP: #c0caf520;
     cursor: #c0caf5;
     selection_background: #2e3c64;
     color0: #60626D;
