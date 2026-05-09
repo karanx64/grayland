@@ -1,0 +1,124 @@
+// -*- mode: jsonc -*-
+{
+  "layer": "top", // Waybar at top layer
+  "position": "top", // Waybar position (top|bottom|left|right)
+  "height": 28, // Waybar height (to be removed for auto height)
+  // "width": 1280, // Waybar width
+  // "margin-left": 8,
+  // "margin-bottom": 8,
+  // "margin-right": 8,
+  "spacing": 0, // Gaps between modules (4px)
+
+  "fixed-center": true,
+  "reload_style_on_change": true,
+
+  "modules-left": ["custom/power", "custom/brightness", "tray"],
+  "modules-center": [
+    "privacy",
+    "custom/clock",
+    "custom/notifications",
+    "pulseaudio/slider",
+    "mpris",
+  ],
+  "modules-right": ["hyprland/window", "hyprland/workspaces", "custom/menu"],
+  // my modules
+  "custom/clock": {
+    "exec": "date '+%a %-e %b  %-I:%M'",
+    "interval": 10,
+    "format": "{}",
+  },
+  "hyprland/workspaces": {
+    "format": "{id}",
+  },
+  "hyprland/window": {
+    "icon": true,
+    "format": "{title}",
+    "max-length": 0,
+    "icon-size": 20,
+    "rewrite": {
+      "(.*)": "",
+    },
+  },
+  "tray": {
+    "icon-size": 18,
+    "spacing": 10,
+    // "icons": {
+    //   "blueman": "bluetooth",
+    //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png",
+    // },
+  },
+  "custom/menu": {
+    "format": "󰟪  Start",
+    "tooltip": true,
+    "tooltip-format": "Applications",
+    "on-click": "rofi -show drun",
+  },
+  "custom/power": {
+    "format": "󰜡  Exit",
+    "on-click": "wlogout -b 5",
+  },
+  "custom/brightness": {
+    "format": " Brightness",
+    "on-scroll-up": "~/.local/bin/brightness-util.sh 0 +10",
+    "on-scroll-down": "~/.local/bin/brightness-util.sh 0 -10",
+    "on-click": "~/.local/bin/brightness-util.sh 0 +10",
+    "on-click-right": "~/.local/bin/brightness-util.sh 0 -10",
+    "tooltip": true,
+    "tooltip-format": "Brightness",
+  },
+  "pulseaudio/slider": {
+    "min": 0,
+    "max": 100,
+    "orientation": "horizontal",
+  },
+  "mpris": {
+    "format": "{status_icon}",
+    "format-alt": "{player_icon}",
+    "title-len": 18,
+    "format-paused": "{status_icon}",
+    "player-icons": {
+      "firefox": "󰈹",
+      "chromium": "",
+      "default": "",
+      "mpv": "",
+      "spotify": "",
+      "vlc": "󰕼",
+    },
+    "status-icons": {
+      "playing": "",
+      "paused": "",
+    },
+    "tooltip-format": "{title} | {player_icon}",
+    "on-click-right": "",
+    "on-click-middle": "",
+    // "ignored-players": ["firefox"]
+  },
+  "privacy": {
+    "icon-spacing": 10,
+    "icon-size": 14,
+    "transition-duration": 250,
+    "modules": [
+      {
+        "type": "screenshare",
+        "tooltip": true,
+        "tooltip-icon-size": 21,
+      },
+      {
+        "type": "audio-in",
+        "tooltip": true,
+        "tooltip-icon-size": 24,
+      },
+    ],
+    "ignore-monitor": true,
+    "ignore": [
+      {
+        "type": "audio-in",
+        "name": "cava",
+      },
+    ],
+  },
+  "custom/notifications": {
+    "format": " Notifications",
+    "on-click": "swaync-client -t",
+  },
+}
