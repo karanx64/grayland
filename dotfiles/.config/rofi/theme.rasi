@@ -2,6 +2,7 @@
     background: #24283b;
     backgroundOP: #24283b88;
     foreground: #c0caf5;
+    foregroundOP: #c0caf520;
     cursor: #c0caf5;
     selection-background: #2e3c64;
     selection-backgroundOP: #2e3c6410;
@@ -23,7 +24,7 @@
     color15: #c0caf5;
     selection-foreground: #c0caf5;
 
-    border-color:          @color4;
+    border-color:          @foregroundOP;
     separatorcolor:        transparent;
     selected-background:   @selection-background;
     selected-backgroundOP:   @selection-backgroundOP;
@@ -34,7 +35,7 @@
 
 window {
     background-color: @backgroundOP;
-    border: 3px;
+    border: 5px;
     border-color: @border-color;
     border-radius: 12.6px;
     padding: 10px;
@@ -56,7 +57,7 @@ message {
 }
 
 inputbar {
-    background-color: @backgroundOP;
+    background-color: @foregroundOP;
     border-radius: 100px;
     padding: 8px;
     spacing: 8px;
@@ -91,16 +92,14 @@ element-text {
 
 element-icon {
     size: 32px;
-    background-color: @background;
+    background-color: @foregroundOP;
     border-radius: 100px;
     padding: 10px;
 }
 
 element selected.normal {
-    background-color: @backgroundOP;
+    background-color: @foregroundOP;
     text-color: @selection-foreground;
-    border: 1px;
-    border-color: @border-color;
     border-radius: 50%;
 }
 
