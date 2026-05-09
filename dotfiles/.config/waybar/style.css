@@ -50,9 +50,10 @@ window#waybar {
     padding: 0 0 0 10px;
     border-radius: 999px;
     margin: 2px 0;
-}
-#window:hover {
     background-color: @lightOP;
+}
+window#waybar.empty #window {
+    background-color: transparent;
 }
 
 /*custom power*/
