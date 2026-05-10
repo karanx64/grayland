@@ -7,17 +7,18 @@
 
 window {
     /*background-color: rgba(255, 255, 255, 0.1);*/
-    background-color: rgba(46, 60, 100,0.2);
+    /*background-color: rgba(46, 60, 100,0.2);*/
+    background-color: transparent;
 }
 
 button {
     border-radius: 0;
-    border-color: rgba(122, 162, 247,0.2);
+    border-color: rgba(122, 162, 247, 0.2);
     border-width: 6px 0px;
     border-style: solid;
     /* text-decoration-color: @color4; */
     /* color: #cdd6f4; */
-    background-color: rgba(46, 60, 100,0.2);
+    background-color: rgba(46, 60, 100, 0.2);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 25%;
@@ -33,14 +34,14 @@ button:last-child {
     border-width: 6px 6px 6px 0px;
 }
 
-button:focus{
-    background-color: rgba(122, 162, 247,0.1);
+button:focus {
+    background-color: rgba(122, 162, 247, 0.1);
 }
 
 button:active,
 button:hover {
     /* 20% Overlay 2, 80% mantle */
-    background-color: rgba(122, 162, 247,0.2);
+    background-color: rgba(122, 162, 247, 0.2);
     outline-style: none;
 }
 
@@ -69,5 +70,5 @@ button:hover {
 }
 
 button {
-    color: transparent
+    color: transparent;
 }
