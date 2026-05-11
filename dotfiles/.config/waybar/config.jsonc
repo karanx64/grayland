@@ -41,7 +41,7 @@
   },
   "tray": {
     "icon-size": 18,
-    "spacing": 10,
+    "spacing": 20,
     // "icons": {
     //   "blueman": "bluetooth",
     //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png",
@@ -120,5 +120,13 @@
   "custom/notifications": {
     "format": " Notifications",
     "on-click": "swaync-client -t",
+  },
+  "custom/swayncreload": {
+    "format": " reload",
+    "on-click": "~/.config/waybar/scripts/swaync-reload.sh",
+  },
+  "custom/notify": {
+    "format": " send",
+    "on-click": "~/.config/waybar/scripts/notify.sh",
   },
 }
