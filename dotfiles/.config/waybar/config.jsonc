@@ -12,15 +12,31 @@
   "fixed-center": true,
   "reload_style_on_change": true,
 
-  "modules-left": ["custom/power", "custom/brightness", "tray"],
-  "modules-center": [
+  "modules-left": ["custom/menu", "hyprland/workspaces", "hyprland/window"],
+  "modules-center": ["custom/notifications", "mpris"],
+  "modules-right": [
     "privacy",
-    "custom/clock",
-    "custom/notifications",
+    "tray",
+    "custom/brightness",
     "pulseaudio/slider",
-    "mpris",
+    "custom/clock",
+    "custom/power",
   ],
-  "modules-right": ["hyprland/window", "hyprland/workspaces", "custom/menu"],
+  // "modules-left": ["custom/menu", "custom/power"],
+  // "modules-center": [
+  //   "privacy",
+  //   "custom/notifications",
+  //   "hyprland/workspaces",
+  //   "mpris",
+  // ],
+  // "modules-right": [
+  //   "pulseaudio/slider",
+  //   "tray",
+
+  //   "custom/brightness",
+
+  //   "custom/clock",
+  // ],
   // my modules
   "custom/clock": {
     "exec": "date '+%a %-e %b  %-I:%M'",
@@ -118,7 +134,8 @@
     ],
   },
   "custom/notifications": {
-    "format": " Notifications",
+    "format": "",
+    //  "format": " Notifications",
     "on-click": "swaync-client -t",
   },
   "custom/swayncreload": {
