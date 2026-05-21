@@ -1,0 +1,116 @@
+"$schema" = "https://starship.rs/config-schema.json"
+add_newline = false
+
+# COLOR PALETTE
+
+palette = "tokyo_night"
+
+[palettes.tokyo_night]
+bg = "#1a1b26"
+
+blue = "#7aa2f7"
+cyan = "#7dcfff"
+green = "#9ece6a"
+yellow = "#e0af68"
+orange = "#ff9e64"
+red = "#f7768e"
+purple = "#bb9af7"
+
+fg_dark = "#1a1b26"
+fg_light = "#c0caf5"
+
+# PROMPT FORMAT
+
+format = """
+$directory\
+$git_branch\
+$git_status\
+$nodejs\
+$python\
+$c\
+$rust\
+$golang\
+$line_break\
+$character\
+"""
+
+# DIRECTORY
+
+[directory]
+style = "bg:blue fg:fg_dark"
+format = "[](fg:blue)[   $path ]($style)[](fg:blue)"
+truncation_length = 3
+
+# GIT BRANCH
+
+[git_branch]
+symbol = ""
+style = "bg:purple fg:fg_dark"
+format = " [](fg:purple)[ $symbol $branch ]($style)[](fg:purple)"
+
+# GIT STATUS
+
+[git_status]
+format = "($conflicted$stashed$deleted$renamed$modified$staged$untracked$ahead_behind)"
+
+conflicted = " [](fg:purple)[ ](bg:purple fg:fg_dark)[](fg:purple)"
+stashed = " [](fg:cyan)[󰏗 ${count} ](bg:cyan fg:fg_dark)[](fg:cyan)"
+deleted = " [](fg:red)[󰍶 ${count} ](bg:red fg:fg_dark)[](fg:red)"
+renamed = " [](fg:yellow)[󰑕 ${count} ](bg:yellow fg:fg_dark)[](fg:yellow)"
+modified = " [](fg:orange)[󰷥 ${count} ](bg:orange fg:fg_dark)[](fg:orange)"
+staged = " [](fg:green)[󰐖 ${count} ](bg:green fg:fg_dark)[](fg:green)"
+untracked = " [](fg:blue)[  ${count}](bg:blue fg:fg_dark)[](fg:blue)"
+
+ahead = " [](fg:red)[󰁞${count} ](bg:red fg:fg_dark)[](fg:red)"
+behind = " [](fg:red)[󰁆${count} ](bg:red fg:fg_dark)[](fg:red)"
+diverged = " [](fg:red)[󰹹 ⇡${ahead_count} ⇣${behind_count} ](bg:red fg:fg_dark)[](fg:red)"
+
+up_to_date = " [](fg:green)[ ](bg:green fg:fg_dark)[](fg:green)"
+
+[package]
+# symbol = "📦"
+# style = "bg:orange fg:fg_dark"
+# format = " [](fg:orange)[ $symbol $version ]($style)[]##(fg:orange)"
+format = " "
+
+# NODEJS
+
+[nodejs]
+symbol = ""
+style = "bg:green fg:fg_dark"
+format = " [](fg:green)[ $symbol ($version) ]($style)[](fg:green)"
+
+# PYTHON
+
+[python]
+symbol = ""
+style = "bg:yellow fg:fg_dark"
+format = " [](fg:yellow)[ $symbol (${version}) ]($style)[](fg:yellow)"
+
+# C
+
+[c]
+symbol = ""
+style = "bg:blue fg:fg_dark"
+format = " [](fg:blue)[ $symbol ($version) ]($style)[](fg:blue)"
+
+# RUST
+
+[rust]
+symbol = ""
+style = "bg:orange fg:fg_dark"
+format = " [](fg:orange)[ $symbol ($version) ]($style)[](fg:orange)"
+
+# GO
+
+[golang]
+symbol = ""
+style = "bg:cyan fg:fg_dark"
+format = " [](fg:cyan)[ $symbol ($version) ]($style)[](fg:cyan)"
+
+# PROMPT CHARACTER
+
+[character]
+success_symbol = "[\\$](bold green)"
+error_symbol = "[\\$](bold red)"
+vicmd_symbol = "[\\$](bold purple)"
