@@ -135,6 +135,7 @@ alias c="clear"
 
 alias ff="fastfetch"
 alias btop="btop --force-utf"
+alias py="python"
 
 
 
@@ -145,3 +146,12 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+# Detect Linux console TTY
+if [[ "$TERM" == "linux" ]]; then
+    # Simple prompt for tty1/tty2
+    PROMPT='%F{green}%n@%m%f:%F{yellow}%~%f # '
+else
+    eval "$(starship init zsh)"
+fi
+
