@@ -15,10 +15,12 @@
   "modules-left": ["custom/menu", "hyprland/workspaces", "hyprland/window"],
   "modules-center": ["custom/notifications", "mpris"],
   "modules-right": [
+    "pulseaudio/slider",
+
     "privacy",
     "tray",
-    "custom/brightness",
-    "pulseaudio/slider",
+    // "custom/brightness",
+
     "custom/clock",
     "custom/power",
   ],

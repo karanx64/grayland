@@ -1,0 +1,6 @@
+{
+  "cli_default_open_behavior": "existing_window",
+  "use_system_path_prompts": false,
+  "when_closing_with_no_tabs": "keep_window_open",
+  "theme": "Tokyo Night Storm"
+}

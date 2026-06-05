@@ -135,6 +135,7 @@ alias c="clear"
 
 alias ff="fastfetch"
 alias btop="btop --force-utf"
+alias py="python"
 
 
 
@@ -145,3 +146,28 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+# Detect Linux console TTY
+if [[ "$TERM" == "linux" ]]; then
+    # Simple prompt for tty1/tty2
+    PROMPT='%F{green}%n@%m%f:%F{yellow}%~%f # '
+else
+    eval "$(starship init zsh)"
+fi
+
+
+#npm
+export PATH=~/.npm-global/bin:$PATH
+
+
+# pnpm
+export PNPM_HOME="/home/main/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
+# pnpm end
+
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
