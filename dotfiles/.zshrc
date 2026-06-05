@@ -155,3 +155,19 @@ else
     eval "$(starship init zsh)"
 fi
 
+
+#npm
+export PATH=~/.npm-global/bin:$PATH
+
+
+# pnpm
+export PNPM_HOME="/home/main/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
+# pnpm end
+
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
